@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from './components/layouts/Header';
+import AddTodo from './components/todos/AddTodo';
 import Todos from './components/todos/Todos';
 
 import './App.css';
@@ -15,12 +16,12 @@ class App extends React.Component {
       {
         id: 2,
         title: 'Do something',
-        completed: true
+        completed: false
       },
       {
         id: 3,
         title: 'Have lunch',
-        completed: true
+        completed: false
       }
     ]
   }
@@ -35,6 +36,17 @@ class App extends React.Component {
       })
     })
   }
+
+  addTodo = e => {
+    const newTodo = {
+      id: Date.now(),
+      title: e,
+      completed: false
+    }
+    this.setState({
+      todos: [...this.state.todos, newTodo]
+    })
+  }
    
   detTodo = e => {
     this.setState({
@@ -45,8 +57,11 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Header/>
-        <Todos todos={this.state.todos}  markComplete={this.markComplete} detTodo={this.detTodo}/>
+        <div className="container">
+          <Header/>
+          <AddTodo addTodo={this.addTodo}/>
+          <Todos todos={this.state.todos}  markComplete={this.markComplete} detTodo={this.detTodo}/>
+        </div>
       </div>
     )
   }

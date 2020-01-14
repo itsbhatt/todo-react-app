@@ -13,3 +13,12 @@ a {
   color: #333;
   text-decoration: none;
 }
+
+.App {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+}
