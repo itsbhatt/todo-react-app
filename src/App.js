@@ -31,7 +31,6 @@ class App extends React.Component {
         if(todo.id === e) {
           todo.completed = !todo.completed
         }
-
         return todo;
       })
     })
