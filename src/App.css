@@ -22,3 +22,11 @@ a {
 .container {
   width: 100%;
 }
+
+.nav-link {
+  color: #fff;
+}
+
+.nav-link:hover {
+  color: #d5d5d5;
+}
